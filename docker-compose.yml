@@ -1,0 +1,18 @@
+site:
+ build: mysql
+ container_name: mysql
+ restart: always
+ links: 
+  - tomcat
+  - java
+tomcat: 
+  build: tomcat
+  container_name: tomcat
+  restart: always
+  ports:
+   - 8080:8080
+java: 
+  build: java8
+  container_name: java
+  restart: always
+ 
